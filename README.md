@@ -1,4 +1,4 @@
-# covid-19-live-stats
+# Covid-19 Live Stats
 😷 A website for you get info about Covid-19 in your country and in the world! 😷
 
 Backend:
