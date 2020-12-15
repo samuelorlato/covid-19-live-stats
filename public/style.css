@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1A1C25;
+    overflow-x: hidden;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #1A1C25; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.76); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.493); 
+  }
+h3{
+    font-size: 3vh;
+    font-weight: bolder;
+    color: #F5F5F5;
+}
+h4{
+    font-size: 2.5vh;
+    color: #f5f5f5d8;
+}
+#top-bar ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    list-style: none;
+}
+#top-bar ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: 0.8%;
+    margin: 1%;
+    width: 25%;
+    border-radius: 7px;
+}
+#country{
+    color: #FB7600;
+}
+#recovered, #recovered-global{
+    color: #3363F7;
+}
+#deaths, #deaths-global{
+    color: #eb1212;
+}
+#confirmed, #confirmed-global{
+    color: #197816;
+}
+#active, #active-global{
+    color: #18cc12;
+}
+#chart-div{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 96%;
+    margin-top: 0.5%;
+    margin-left: 1.15%;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 73.1vh;
+}
+#country-li{
+    border-top: 5px solid #FB7600;
+}
+#recovered-li, #recovered-global-li{
+    border-top: 5px solid #3363F7;
+}
+#deaths-li, #deaths-global-li{
+    border-top: 5px solid #eb1212;
+}
+#confirmed-li, #confirmed-global-li{
+    border-top: 5px solid #197816;
+}
+#active-li, #active-global-li{
+    border-top: 5px solid #18cc12;
+}
+#title-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#title{
+    margin-top: 1%;
+    margin-bottom: 0.2%;
+    font-size: 1.7rem;
+    color: #F5F5F5;
+}
+#in-country{
+    font-size: 1.7rem;
+    color: #F5F5F5;
+    margin-top: 1%;
+    margin-bottom: 0.2%;
+}
+#map-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#legend{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1.4%;
+    margin-top: 2%;
+    margin-bottom: 0.7%;
+}
+
+.legend { list-style: none; }
+.legend li { float: left; margin-right: 15px; color: #F5F5F5;}
+.legend span { float: left; width: 15px; height: 15px; margin: 2px; margin-top: 5px;}
+.legend .one { background-color: #530000; }
+.legend .two { background-color: #a70000; }
+.legend .three { background-color: #ff0000; }
+.legend .four { background-color: #ff5252; }
+.legend .five{ background-color: #ff7b7b; }
+.legend .six{ background-color: #ffbaba; }
+.legend .seven{ background-color: #ffcdd2; }
+.legend .eight{ background-color: #ffebee; }
+.legend .nine{ background-color: white; }

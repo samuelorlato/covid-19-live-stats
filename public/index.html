@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Covid-19 | Live Stats</title>
+</head>
+<body>
+    <div id="title-div">
+        <h3 id="title">C<i class="fas fa-virus"></i>vid-19 in&nbsp</h3><h3 id="in-country">loading...</h3>
+    </div>
+    <div id="top-bar">
+        <ul>
+            <li id="country-li">
+                <h4>Country <i class="fa fa-flag"></i></h4>
+                <h3 id="country">Loading...</h3>
+            </li>
+            <li id="confirmed-li">
+                <h4>Confirmed <i class="fas fa-head-side-mask"></i></h4>
+                <h3 id="confirmed">-</h3>
+            </li>
+            <li id="active-li">
+                <h4>Active <i class="fas fa-head-side-mask"></i></h4>
+                <h3 id="active">-</h3>
+            </li>
+            <li id="deaths-li">
+                <h4>Deaths <i class="fas fa-skull-crossbones"></i></h4>
+                <h3 id="deaths">-</h3>
+            </li>
+            <li id="recovered-li">
+                <h4>Recovered <i class="fa fa-laugh-beam"></i></h4>
+                <h3 id="recovered">-</h3>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="chart-div">
+            <canvas id="chart" height="100%"></canvas>
+        </div>
+    </div>
+    <div id="title-div">
+        <h3 id="title">C<i class="fas fa-virus"></i>vid-19 in World</h3>
+    </div>
+    <div id="top-bar">
+        <ul>
+            <li id="confirmed-global-li">
+                <h4>Confirmed <i class="fas fa-head-side-mask"></i></h4>
+                <h3 id="confirmed-global">-</h3>
+            </li>
+            <li id="active-global-li">
+                <h4>Active <i class="fas fa-head-side-mask"></i></h4>
+                <h3 id="active-global">-</h3>
+            </li>
+            <li id="deaths-global-li">
+                <h4>Deaths <i class="fas fa-skull-crossbones"></i></h4>
+                <h3 id="deaths-global">-</h3>
+            </li>
+            <li id="recovered-global-li">
+                <h4>Recovered <i class="fa fa-laugh-beam"></i></h4>
+                <h3 id="recovered-global">-</h3>
+            </li>
+        </ul>
+    </div>
+    <div id="map-container">
+        <div id='map' style='width: 97.55%; height: 88%;'></div>
+        <div id="legend">
+            <h3>Active Covid-19 Cases: </h3>
+            <ul class="legend">
+                <li><span class="one"></span> More than 2000000</li>
+                <li><span class="two"></span> 1000000 to 1999999</li>
+                <li><span class="three"></span> 100000 to 999999</li>
+                <li><span class="four"></span> 50000 to 99999</li>
+                <li><span class="five"></span> 10000 to 49999</li>
+                <li><span class="six"></span>  1000 to 9999</li>
+                <li><span class="seven"></span> Less than 1000</li>
+                <li><span class="eight"></span> Less than 100</li>
+                <li><span class="nine"></span> 0</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/5ce84897d8.js" crossorigin="anonymous"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+</body>
+</html>

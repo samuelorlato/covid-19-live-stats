@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "covid19-live-stats",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
