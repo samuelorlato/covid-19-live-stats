@@ -18,3 +18,6 @@ Frontend:
 - [x] Build map with Mapbox GL JS (together with backend)
 - [ ] CSS for mobile view
 - [ ] Number/Counter animated
+
+⚠️ Warning ⚠️
+⚠️ If you're using ad blocker, disable this!!! The website won't work correctly! (The data won't load!) ⚠️
