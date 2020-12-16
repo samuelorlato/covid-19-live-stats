@@ -20,4 +20,4 @@ Frontend:
 - [ ] Number/Counter animated
 
 ⚠️ Warning ⚠️
-⚠️ If you're using ad blocker, disable this!!! The website won't work correctly! (The data won't load!) ⚠️
+If you're using ad blocker, disable this!!! The website won't work correctly! (The data won't load!)
