@@ -3,11 +3,13 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+html{
+    overflow-x: hidden;
+}
 body{
     width: 100vw;
     height: 100vh;
     background-color: #1A1C25;
-    overflow-x: hidden;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -29,30 +31,33 @@ body{
     background: rgba(255, 255, 255, 0.493); 
   }
 h3{
-    font-size: 3vh;
+    font-size: 1.3rem;
     font-weight: bolder;
     color: #F5F5F5;
 }
 h4{
-    font-size: 2.5vh;
+    font-size: 1rem;
     color: #f5f5f5d8;
+}
+#chart{
+    height: 100%;
 }
 #top-bar ul{
     display: flex;
     flex-direction: row;
-    width: 100%;
     justify-content: space-around;
     list-style: none;
+    max-width: 100%;
 }
 #top-bar ul li{
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: rgb(0, 0, 0);
-    padding: 0.8%;
-    margin: 1%;
+    padding: 0.6rem;
+    margin: 0.5rem;
     width: 25%;
-    border-radius: 7px;
+    border-radius: 0.4rem;
 }
 #country{
     color: #FB7600;
@@ -73,14 +78,13 @@ h4{
     height: 100%;
     display: flex;
     flex-direction: row;
-    width: 96%;
-    margin-top: 0.5%;
-    margin-left: 1.15%;
+    width: 100%;
+    margin: 0.5%;
 }
 .container{
     display: flex;
     flex-direction: row;
-    height: 73.1vh;
+    height: 75vh;
 }
 #country-li{
     border-top: 5px solid #FB7600;
@@ -115,25 +119,28 @@ h4{
     margin-bottom: 0.2%;
 }
 #map-container{
-    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-top: 1.5%;
 }
 #legend{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 1.4%;
-    margin-top: 2%;
-    margin-bottom: 0.7%;
+    float: left;
+    margin-right: 4%;
+    margin-left: 4%;
+    width: 100%;
 }
 
-.legend { list-style: none; }
-.legend li { float: left; margin-right: 15px; color: #F5F5F5;}
+.legend { list-style: none; width: 100%; padding: 1.5%; display: flex; flex-direction: row;}
+.legend li {margin-right: 15px; color: #F5F5F5;}
 .legend span { float: left; width: 15px; height: 15px; margin: 2px; margin-top: 5px;}
 .legend .one { background-color: #530000; }
 .legend .two { background-color: #a70000; }

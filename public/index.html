@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 725px)">
     <title>Covid-19 | Live Stats</title>
 </head>
 <body>
@@ -41,7 +42,7 @@
     </div>
     <div class="container">
         <div id="chart-div">
-            <canvas id="chart" height="100%"></canvas>
+            <canvas id="chart"></canvas>
         </div>
     </div>
     <div id="title-div">
@@ -70,7 +71,6 @@
     <div id="map-container">
         <div id='map' style='width: 97.55%; height: 88%;'></div>
         <div id="legend">
-            <h3>Active Covid-19 Cases: </h3>
             <ul class="legend">
                 <li><span class="one"></span> More than 2000000</li>
                 <li><span class="two"></span> 1000000 to 1999999</li>
