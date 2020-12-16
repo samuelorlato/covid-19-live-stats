@@ -16,7 +16,7 @@ Frontend:
 - [x] CSS for desktop view
 - [x] Build charts with Chart.js (together with backend)
 - [x] Build map with Mapbox GL JS (together with backend)
-- [ ] CSS for mobile view
+- [x] CSS for mobile view
 - [ ] Number/Counter animated
 
 ⚠️ Warning ⚠️
