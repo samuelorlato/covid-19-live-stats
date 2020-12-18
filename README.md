@@ -10,7 +10,7 @@ Backend:
 - [x] Add diferent colors in map markers for active cases
 - [x] Get global covid-19 data
 - [ ] Data and chart real time update while user stay in website
-- [ ] User can select the country to see info (together with frontend)
+- [x] User can select the country to see info (together with frontend)
 
 Frontend:
 - [x] Geral structure
@@ -19,7 +19,7 @@ Frontend:
 - [x] Build map with Mapbox GL JS (together with backend)
 - [x] CSS for mobile view
 - [ ] Number/Counter animated
-- [ ] User can select the country to see info (together with backend)
+- [x] User can select the country to see info (together with backend)
 
 ⚠️ Warning ⚠️
 If you're using ad blocker, disable this!!! The website won't work correctly! (The data won't load!)
