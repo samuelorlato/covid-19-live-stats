@@ -14,13 +14,15 @@
 </head>
 <body>
     <div id="title-div">
-        <h3 id="title">C<i class="fas fa-virus"></i>vid-19 in&nbsp</h3><h3 id="in-country">loading...</h3>
+        <h3 id="title" class="notranslate" translate="no">C<i class="fas fa-virus"></i>vid-19 in&nbsp</h3><h3 id="in-country">loading...</h3>
     </div>
     <div id="top-bar">
         <ul>
             <li id="country-li">
                 <h4>Country <i class="fa fa-flag"></i></h4>
-                <h3 id="country">Loading...</h3>
+                <select id="country">
+
+                </select>
             </li>
             <li id="confirmed-li">
                 <h4>Confirmed <i class="fas fa-head-side-mask"></i></h4>
@@ -72,22 +74,21 @@
         <div id='map' style='width: 97.55%; height: 88%;'></div>
         <div id="legend">
             <ul class="legend">
-                <li><span class="one"></span> More than 2000000</li>
-                <li><span class="two"></span> 1000000 to 1999999</li>
-                <li><span class="three"></span> 100000 to 999999</li>
-                <li><span class="four"></span> 50000 to 99999</li>
-                <li><span class="five"></span> 10000 to 49999</li>
-                <li><span class="six"></span>  1000 to 9999</li>
-                <li><span class="seven"></span> Less than 1000</li>
-                <li><span class="eight"></span> Less than 100</li>
+                <li><span class="one"></span> More than&nbsp<div class="number">2000000</div></li>
+                <li><span class="two"></span> <div class="number">1000000&nbsp</div>to&nbsp<div class="number">1999999</div></li>
+                <li><span class="three"></span> <div class="number">100000&nbsp</div>to&nbsp<div class="number">999999</div></li>
+                <li><span class="four"></span> <div class="number">50000&nbsp</div>to&nbsp<div class="number">99999</div></li>
+                <li><span class="five"></span> <div class="number">10000&nbsp</div>to&nbsp<div class="number">49999</div></li>
+                <li><span class="six"></span>  <div class="number">1000&nbsp</div>to&nbsp<div class="number">9999</div></li>
+                <li><span class="seven"></span> Less than&nbsp<div class="number">1000</div></li>
+                <li><span class="eight"></span> Less than&nbsp<div class="number">100</div></li>
                 <li><span class="nine"></span> 0</li>
             </ul>
         </div>
     </div>
-
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
     <script src="https://kit.fontawesome.com/5ce84897d8.js" crossorigin="anonymous"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="/__/firebase/8.2.0/firebase-app.js"></script>

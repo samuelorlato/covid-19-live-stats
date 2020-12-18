@@ -1,11 +1,8 @@
-fetch("https://ipapi.co/json/")
-.then(response => {
-    return response.json()
-})
-.then(geolocation => {
-    var country = geolocation.country_name
-    document.getElementById("in-country").innerHTML = country
-    fetch("https://covid-193.p.rapidapi.com/statistics?country="+country, {
+var country, select
+
+function loadData(locate){
+    document.getElementById("in-country").innerHTML = locate
+    fetch("https://covid-193.p.rapidapi.com/statistics?country="+locate, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "*",
@@ -16,12 +13,81 @@ fetch("https://ipapi.co/json/")
         return response.json()
     })
     .then(data => {
-        document.getElementById("country").innerHTML = country
-        document.getElementById("recovered").innerHTML = data.response[0].cases.recovered.toLocaleString()
-        document.getElementById("deaths").innerHTML = data.response[0].deaths.total.toLocaleString()
-        document.getElementById("confirmed").innerHTML = data.response[0].cases.total.toLocaleString()
-        document.getElementById("active").innerHTML = data.response[0].cases.active.toLocaleString()
+        console.log(data)
+        try{
+            document.getElementById("recovered").innerHTML = data.response[0].cases.recovered.toLocaleString()
+        }
+        catch{
+            document.getElementById("recovered").innerHTML = "Without data"
+        }
+        try{
+            document.getElementById("deaths").innerHTML = data.response[0].deaths.total.toLocaleString()
+        }
+        catch{
+            document.getElementById("deaths").innerHTML = "Without data"
+        }
+        try{
+            document.getElementById("confirmed").innerHTML = data.response[0].cases.total.toLocaleString()
+        }
+        catch{
+            document.getElementById("confirmed").innerHTML = "Without data"
+        }
+        try{
+            document.getElementById("active").innerHTML = data.response[0].cases.active.toLocaleString()
+        }
+        catch{
+            document.getElementById("active").innerHTML = "Without data"
+        }
         drawChart(country, [data.response[0].cases.total], [data.response[0].cases.active], [data.response[0].deaths.total], [data.response[0].cases.recovered])
+    })
+}
+
+fetch("https://ipapi.co/json/")
+.then(response => {
+    return response.json()
+})
+.then(geolocation => {
+    country = geolocation.country_name
+    loadData(country)
+})
+fetch("https://covid-193.p.rapidapi.com/statistics", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "*",
+                "x-rapidapi-host": "covid-193.p.rapidapi.com"
+            }
+    })
+.then(response => {
+    return response.json()
+})
+.then(data => {
+    countries = []
+    data.response.forEach(element => {
+        countries.push(element.country)
+    })
+    select = document.getElementById("country")
+    var i = 0
+    countries.sort()
+    countries.forEach(element => {
+        if(element == country){
+            var opt = document.createElement("option")
+            opt.value = element
+            opt.text = element
+            opt.selected = true
+            opt.className = "opt"
+            select.add(opt, select[i])
+        }
+        else if(element == "All"){
+            
+        }
+        else{
+            var opt = document.createElement("option")
+            opt.value = element
+            opt.text = element
+            opt.className = "opt"
+            select.add(opt, select[i])
+        }
+        i++
     })
 })
 var chart
@@ -161,3 +227,7 @@ fetch("https://corona-api.com/timeline", {
     document.getElementById("recovered-global").innerHTML = recovered.toLocaleString()
     document.getElementById("active-global").innerHTML = active.toLocaleString()
 })
+
+document.getElementById("country").onchange = () => {
+    loadData(document.getElementById("country").options[document.getElementById("country").selectedIndex].text)
+}
