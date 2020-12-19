@@ -11,6 +11,7 @@ Backend:
 - [x] Get global covid-19 data
 - [ ] Data and chart real time update while user stay in website
 - [x] User can select the country to see info (together with frontend)
+- [ ] Register to receive notifications with the user's country information every 15 minutes
 
 Frontend:
 - [x] Geral structure
