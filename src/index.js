@@ -2,10 +2,11 @@ var country, select
 
 function loadData(locate){
     document.getElementById("in-country").innerHTML = locate
+    document.getElementById("country-footer").innerHTML = locate
     fetch("https://covid-193.p.rapidapi.com/statistics?country="+locate, {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "*",
+                "x-rapidapi-key": process.env.key_api_statistics_country,
                 "x-rapidapi-host": "covid-193.p.rapidapi.com"
             }
     })
@@ -13,7 +14,6 @@ function loadData(locate){
         return response.json()
     })
     .then(data => {
-        console.log(data)
         try{
             document.getElementById("recovered").innerHTML = data.response[0].cases.recovered.toLocaleString()
         }
@@ -53,7 +53,7 @@ fetch("https://ipapi.co/json/")
 fetch("https://covid-193.p.rapidapi.com/statistics", {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "*",
+                "x-rapidapi-key": process.env.key_api_statistics,
                 "x-rapidapi-host": "covid-193.p.rapidapi.com"
             }
     })
@@ -151,7 +151,7 @@ function drawChart(country, confirmed, active, deaths, recovered){
         }
     })
 }
-mapboxgl.accessToken = '*'
+mapboxgl.accessToken = process.env.mapbox_token
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/dark-v10',
@@ -229,5 +229,35 @@ fetch("https://corona-api.com/timeline", {
 })
 
 document.getElementById("country").onchange = () => {
-    loadData(document.getElementById("country").options[document.getElementById("country").selectedIndex].text)
+    document.getElementById("recovered").innerHTML = "Loading"
+    document.getElementById("deaths").innerHTML = "Loading"
+    document.getElementById("confirmed").innerHTML = "Loading"
+    document.getElementById("active").innerHTML = "Loading"
+    loadData(document.getElementById("country").options[document.getElementById("country").selectedIndex].value)
+}
+
+document.getElementById("notf").onclick = () => {
+    Notification.requestPermission()
+    if(Notification.permission == "granted"){
+        spawnNotification(country, {
+            opt: {
+                body: "Covid-19 in "+locate,
+                icon: "./icon.png"
+            },
+            title: "Covid-19",
+            link: "https://covid19-live-stats.web.app/"
+        })
+    }
+}
+
+function spawnNotification(locate, opts){
+    var n = new Notification(opts.title, opts.opt)
+
+    if (opcoes.link !== '') {
+        n.addEventListener("click", function() {               
+            n.close();
+            window.focus();
+            window.location.href = opts.link;
+        });
+    }
 }

@@ -14,7 +14,7 @@ html{
 body{
     width: 100vw;
     height: 100vh;
-    background-color: #1A1C25;
+    background-color: #191A1A;
 }
 select{
     background-color: black;
@@ -112,6 +112,7 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 #title{
     margin-top: 1%;
@@ -158,3 +159,25 @@ h4{
 .legend .seven{ background-color: #ffcdd2; }
 .legend .eight{ background-color: #ffebee; }
 .legend .nine{ background-color: white; }
+
+footer{
+    background-color: #191A1A;
+    padding: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: white;
+}
+footer .left{
+    display: flex;
+    flex-direction: row;
+}
+#notf{
+    border: 0;
+    background-color: black;
+    border-radius: 0.4rem;
+    color: white;
+    padding: 0.4rem;
+}
+#notf:hover{
+    cursor: pointer;
+}
