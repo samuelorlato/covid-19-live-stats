@@ -61,7 +61,7 @@ fetch("https://covid-193.p.rapidapi.com/statistics", {
     return response.json()
 })
 .then(data => {
-    countries = []
+    var countries = []
     data.response.forEach(element => {
         countries.push(element.country)
     })
@@ -234,30 +234,4 @@ document.getElementById("country").onchange = () => {
     document.getElementById("confirmed").innerHTML = "Loading"
     document.getElementById("active").innerHTML = "Loading"
     loadData(document.getElementById("country").options[document.getElementById("country").selectedIndex].value)
-}
-
-document.getElementById("notf").onclick = () => {
-    Notification.requestPermission()
-    if(Notification.permission == "granted"){
-        spawnNotification(country, {
-            opt: {
-                body: "Covid-19 in "+locate,
-                icon: "./icon.png"
-            },
-            title: "Covid-19",
-            link: "https://covid19-live-stats.web.app/"
-        })
-    }
-}
-
-function spawnNotification(locate, opts){
-    var n = new Notification(opts.title, opts.opt)
-
-    if (opcoes.link !== '') {
-        n.addEventListener("click", function() {               
-            n.close();
-            window.focus();
-            window.location.href = opts.link;
-        });
-    }
 }
