@@ -171,13 +171,15 @@ footer .left{
     display: flex;
     flex-direction: row;
 }
-#notf{
-    border: 0;
-    background-color: black;
-    border-radius: 0.4rem;
-    color: white;
-    padding: 0.4rem;
+#source-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
 }
-#notf:hover{
-    cursor: pointer;
+#source{
+    color: white;
+}
+#source a{
+    color: white;
 }
